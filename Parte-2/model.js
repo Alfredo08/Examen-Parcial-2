@@ -3,8 +3,16 @@ let uuid = require( 'uuid' );
 
 mongoose.Promise = global.Promise;
 
-/* Tu código va aquí */
+let bookmarkCollection = mongoose.Schema({
+    id : {type: uuid},
+    titulo : { type : String },
+    descripcion : { type: String },
+    url : {type: String}
+});
+
+let BookMark = mongoose.model( 'bookmarks', bookmarkCollection );
+
 
 module.exports = {
-    
+    BookMark
 };
